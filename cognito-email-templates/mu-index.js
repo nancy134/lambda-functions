@@ -3,7 +3,7 @@
 exports.handler = async (event, context, callback) => {
   const email = event.request.userAttributes.email;
   const code = event.request.codeParameter;
-  const domain = "FindingCRE";
+  const domain = "MurbanSW";
 
   // Confirm the user
   event.response.autoConfirmUser = true;
@@ -24,7 +24,7 @@ exports.handler = async (event, context, callback) => {
                         <p align="center" style="padding-top:5px;padding-bottom:5px;margin-left:60px;margin-right:60px;background-color:#b6cfd2;font-size:20pt"><b>${code}</b></p>
                         <footer>
                             <div align="center">
-                                <a href="https://www.${domain}.com"><img src="https://sabre-images.s3.amazonaws.com/FindingCRELogo.png" alt="${domain} - Commercial Real Estate for Sale or Lease" title="FindingCRE - Commercial Real Estate for Sale or Lease"></a>
+                                <a href="https://www.${domain}.com"><img src="https://sabre-images.s3.amazonaws.com/FindingCRELogo.png" alt="${domain} - Commercial Real Estate for Sale or Lease" title="SabreSW - Commercial Real Estate for Sale or Lease"></a>
                             </div>
                         </footer>
                     </div>
@@ -45,7 +45,7 @@ exports.handler = async (event, context, callback) => {
                         <p align="center" style="padding-top:5px;padding-bottom:5px;margin-left:60px;margin-right:60px;background-color:#b6cfd2;font-size:20pt"><b>${code}</b></p>
                         <footer>
                             <div align="center">
-                                <a href="https://www.${domain}.com"><img src="https://sabre-images.s3.amazonaws.com/FindingCRELogo.png" alt="${domain} - Commercial Real Estate for Sale or Lease" title="FindingCRE - Commercial Real Estate for Sale or Lease"></a>
+                                <a href="https://www.${domain}.com"><img src="https://sabre-images.s3.amazonaws.com/FindingCRELogo.png" alt="${domain} - Commercial Real Estate for Sale or Lease" title="SabreSW - Commercial Real Estate for Sale or Lease"></a>
                             </div>
                         </footer>
                     </div>
@@ -58,7 +58,7 @@ exports.handler = async (event, context, callback) => {
   if (event.triggerSource === "CustomMessage_SignUp" || event.triggerSource === "CustomMessage_ResendCode" ) {
 
     event.response = {
-        emailSubject: "Verify your FindingCRE account",
+        emailSubject: "Verify your SabreSW account",
         emailMessage: signUpTemplate(code, domain)
         
     };
@@ -66,7 +66,7 @@ exports.handler = async (event, context, callback) => {
   if (event.triggerSource === "CustomMessage_ForgotPassword") {
 
     event.response = {
-        emailSubject: "Change your FindingCRE password",
+        emailSubject: "Change your SabreSW password",
         emailMessage: forgotPasswordTemplate(code, domain)
         
     };
